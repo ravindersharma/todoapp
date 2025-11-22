@@ -1,32 +1,32 @@
 import mongoose from "mongoose";
+import logger from "./logger";
 
 const connectDB = async () => {
   const MONGO_URI = process.env.MONGO_URI;
 
   if (!MONGO_URI) {
-    console.error(" Mongo URI missing in .env file");
+    logger.error(" Mongo URI missing in .env file");
     process.exit();
   }
 
   try {
     await mongoose.connect(MONGO_URI);
-    console.log(" MongoDb connected successfully");
+     logger.info('✔ MongoDB connected successfully');
 
     // optional event logger
     mongoose.connection.on("connected", () => {
-      console.log("MongoDb Connected");
+       logger.info('✔ MongoDB connected successfully');
     });
 
     mongoose.connection.on("error", (err) => {
-      console.error("Mongoes connection has error", err);
+      logger.error(`MongoDB error: ${err}`);
     });
 
     mongoose.connection.on("disconnected", () => {
       console.warn("MongoDb Disconnected");
     });
   } catch (error) {
-    console.error("Initial Connection error");
-    console.error(error.message);
+    logger.error(`Initial MongoDB Connection Error: ${err.message}`);
 
     // retry after 5 seconds
     setTimeout(connectDB, 5000);
