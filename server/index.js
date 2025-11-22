@@ -1,6 +1,12 @@
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
+
 import connectDB from "./src/config/db.js";
+import logger from "./src/config/logger.js";
+import morganMiddleware from "./src/middlewares/morgan.middleware.js";
+
+import authRoutes from "./src/routes/auth.routes.js"
 
 const app = express();
 app.use(express.json());
