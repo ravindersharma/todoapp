@@ -1,0 +1,50 @@
+{
+  "folders": [{ "path": "client" }, { "path": "server" }, { "path": "shared" }],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "onFocusChange",
+
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all"
+  },
+
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "dsznajder.es7-react-js-snippets",
+      "christian-kohler.npm-intellisense",
+      "christian-kohler.path-intellisense",
+      "wix.vscode-import-cost",
+      "formulahendry.auto-rename-tag",
+      "formulahendry.auto-close-tag",
+      "mikestead.dotenv",
+      "gruntfuggly.todo-tree",
+      "eamodio.gitlens",
+      "streetsidesoftware.code-spell-checker",
+      "github.copilot",
+      "github.copilot-chat",
+      "ms-azuretools.vscode-docker",
+      "rangav.vscode-thunder-client",
+      "orta.vscode-jest",
+      "ms-vscode.vscode-typescript-next",
+      "pkief.material-icon-theme",
+      "bradlc.vscode-tailwindcss"
+    ]
+  }
+}
