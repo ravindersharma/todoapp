@@ -46,16 +46,7 @@ const Dashboard = () => {
             <h2 className="text-xl font-semibold">Pending Tasks</h2>
             <p className="text-4xl font-bold mt-2 text-yellow-600">{pending}</p>
           </div>
-
-          <div className="bg-white shadow rounded p-6">
-            <h2 className="text-xl font-semibold">Next Steps</h2>
-            <ul className="mt-3 space-y-2 text-gray-600">
-              <li>• View all tasks</li>
-              <li>• Create new tasks</li>
-              <li>• Mark tasks as completed</li>
-              <li>• Delete tasks anytime</li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>
