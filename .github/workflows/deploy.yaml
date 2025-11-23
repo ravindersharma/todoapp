@@ -2,8 +2,7 @@ name: CI/CD Deploy to AWS EC2
 
 on:
   push:
-    branches: 
-      -"*"
+    branches: ["master"]
 
 jobs:
   deploy:
