@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-    
+
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/todoapp
-            docker compose -f docker-compose.prod.yml down
-            docker compose -f docker-compose.prod.yml up --build -d
+            docker-compose -f docker-compose.prod.yml down
+            docker-compose -f docker-compose.prod.yml up --build -d
             docker image prune -f
             echo "Deployment completed!"
