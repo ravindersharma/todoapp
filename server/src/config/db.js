@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import logger from "./logger";
+import logger from "./logger.js";
 
 const connectDB = async () => {
   const MONGO_URI = process.env.MONGO_URI;
@@ -32,11 +32,5 @@ const connectDB = async () => {
     setTimeout(connectDB, 5000);
   }
 };
-
-// module.exports = () =>
-//   mongoose.connect(process.env.MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: tue,
-//   });
 
 export default connectDB;

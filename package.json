@@ -1,0 +1,12 @@
+{
+  "name": "taskmanager-fullstack",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:start-backend\" \"npm:start-client\"",
+    "start-backend": "cd server && npm run dev",
+    "start-client": "cd client && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

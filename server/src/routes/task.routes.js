@@ -6,14 +6,16 @@ import{
     deleteTask
 } from '../controllers/task.controller.js';
 
+import  auth from  '../middlewares/auth.middleware.js';
+
 const router= Router();
 
 router.use(auth);
 
 router.post('/',createTask);
 router.get('/',getTasks);
-router.post('/:id',updateTask);
-router.post('/:id',deleteTask);
+router.put('/:id',updateTask);
+router.delete('/:id',deleteTask);
 
 
 export default router;
