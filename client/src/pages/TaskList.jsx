@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useTasks from "../hooks/useTasks";
 import TaskCard from "../components/TaskCard";
+import Header from "../components/Header.jsx";
 
 const TaskList = () => {
   const { tasks, fetchTasks, createTask } = useTasks();
@@ -8,7 +9,7 @@ const TaskList = () => {
 
   useEffect(() => {
     fetchTasks();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleAdd = () => {
@@ -18,29 +19,33 @@ const TaskList = () => {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-semibold mb-6">Your Tasks</h1>
+    <div className="min-h-screen bg-gray-100">
+      <Header />
 
-      <div className="flex gap-3 mb-6">
-        <input
-          className="flex-1 p-3 border rounded"
-          placeholder="Add new task..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+      <div className="p-8 max-w-2xl mx-auto">
+        <h1 className="text-3xl font-semibold mb-6">Your Tasks</h1>
 
-        <button
-          onClick={handleAdd}
-          className="px-5 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Add
-        </button>
-      </div>
+        <div className="flex gap-3 mb-6">
+          <input
+            className="flex-1 p-3 border rounded"
+            placeholder="Add new task..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-      <div className="space-y-4">
-        {tasks.map((task) => (
-          <TaskCard key={task._id} task={task} />
-        ))}
+          <button
+            onClick={handleAdd}
+            className="px-5 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Add
+          </button>
+        </div>
+
+        <div className="space-y-4">
+          {tasks.map((task) => (
+            <TaskCard key={task._id} task={task} />
+          ))}
+        </div>
       </div>
     </div>
   );
